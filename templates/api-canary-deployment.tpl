@@ -6,6 +6,9 @@ metadata:
 spec:
   replicas: {{ .Values.api.canaryReplicas }}
   minReadySeconds: {{ .Values.api.minReadySeconds }}
+  selector:
+    matchLabels:
+      app: pelias-api-private-canary
   strategy:
     rollingUpdate:
       maxSurge: 1

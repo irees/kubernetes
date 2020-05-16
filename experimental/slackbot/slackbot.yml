@@ -4,6 +4,9 @@ metadata:
   name: pelias-slackbot-deployment
 spec:
   replicas: 2 # tells deployment to run 2 pods matching the template
+  selector:
+    matchLabels:
+      app: pelias-slackbot
   template: # create pods using pod definition in this template
     metadata:
       labels:
